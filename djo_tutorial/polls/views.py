@@ -8,7 +8,7 @@ from .models import Question
 def index(request):
     latest_question_list = Question.objects.order_by("-pub_date")[:5]
     output = ", ".join([q.question_text for q in latest_question_list])
-    return HttpResponse("Hello World! You're at polls index.")
+    return HttpResponse(output)
 
 
 def detail(request, question_id):
